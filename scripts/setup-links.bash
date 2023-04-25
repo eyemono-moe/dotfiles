@@ -19,3 +19,7 @@ ln -sfnv "$REPO_DIR/config/"* "$XDG_CONFIG_HOME"
 ln -sfv "$XDG_CONFIG_HOME/zsh/.zshenv" "$HOME/.zshenv"
 ln -sfnv "$XDG_CONFIG_HOME/gitmoji" "$HOME/.gitmoji"
 ln -sfnv "$XDG_CONFIG_HOME/vim" "$HOME/.vim"
+
+# windows PATH
+ln -s "/mnt/c/Users/ysdr8/AppData/Local/Programs/Microsoft VS Code/bin/code"
+
