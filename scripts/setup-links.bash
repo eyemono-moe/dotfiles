@@ -21,5 +21,5 @@ ln -sfnv "$XDG_CONFIG_HOME/gitmoji" "$HOME/.gitmoji"
 ln -sfnv "$XDG_CONFIG_HOME/vim" "$HOME/.vim"
 
 # bin PATH
-sudo ln -sf "$REPO_DIR/config/bin" "/usr/local/bin"
+sudo ln -sf "$REPO_DIR/config/bin/code" "/usr/local/bin"
 
