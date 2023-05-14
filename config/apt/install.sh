@@ -9,6 +9,7 @@ apt install -y \
   curl \
   file \
   git \
-  zip
+  zip \
+  zsh
 
 curl -fsSL 'https://download.docker.com/linux/ubuntu/gpg' | apt-key add -
