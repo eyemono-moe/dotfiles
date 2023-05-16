@@ -3,6 +3,7 @@ ubuntu_version="$(lsb_release -r | awk '{print $2 * 100}')"
 
 sudo -E add-apt-repository -y ppa:git-core/ppa
 sudo -E add-apt-repository -y ppa:longsleep/golang-backports
+sudo -E apt-add-repository ppa:neovim-ppa/stable
 apt update
 apt upgrade -y
 apt install -y \
