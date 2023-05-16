@@ -18,7 +18,6 @@ apt install -y \
   git \
   hexyl \
   jq \
-  neovim \
   ripgrep \
   shellcheck \
   tmux \
