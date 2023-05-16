@@ -8,3 +8,10 @@ command -v apt >/dev/null || exit 0
 echo "$DOTFILES_PREFIX setup apt..."
 
 sudo -E /bin/sh "$REPO_DIR/config/apt/install.sh"
+
+# setup symbolic links
+mkdir -p ~/.local/bin
+# bat
+ln -s /usr/bin/batcat ~/.local/bin/bat
+# fd
+ln -s $(which fdfind) ~/.local/bin/fd

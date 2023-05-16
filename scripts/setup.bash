@@ -4,7 +4,6 @@ set -eu
 source "$(dirname "$0")/common.bash"
 
 /bin/bash "$CUR_DIR/setup-apt.bash"
-/bin/bash "$CUR_DIR/setup-homebrew.bash"
 /bin/bash "$CUR_DIR/setup-links.bash"
 /bin/bash "$CUR_DIR/setup-zinit.bash"
 /bin/bash "$CUR_DIR/setup-install.bash"

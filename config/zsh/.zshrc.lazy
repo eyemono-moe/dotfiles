@@ -89,6 +89,11 @@ export MANPAGER="sh -c 'col -bx | bat --color=always --language=man --plain'"
 alias cat='bat --paging=never'
 alias batman='bat --language=man --plain'
 
+### Go ###
+export GOPATH=$HOME
+export PATH=$PATH:$HOME/go/bin
+export PATH=$PATH:$GOPATH/bin
+
 ### Node.js ###
 export NODE_REPL_HISTORY="$XDG_STATE_HOME/node_history"
 
