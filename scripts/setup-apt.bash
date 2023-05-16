@@ -12,6 +12,6 @@ sudo -E /bin/sh "$REPO_DIR/config/apt/install.sh"
 # setup symbolic links
 mkdir -p ~/.local/bin
 # bat
-ln -s /usr/bin/batcat ~/.local/bin/bat
+ln -sfnv /usr/bin/batcat ~/.local/bin/bat
 # fd
-ln -s $(which fdfind) ~/.local/bin/fd
+ln -sfnv $(which fdfind) ~/.local/bin/fd
