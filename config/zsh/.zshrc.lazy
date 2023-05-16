@@ -1,7 +1,7 @@
 ### Aliases ###
 alias la='ls -A'
 
-alias ll="exa -l -h -@ -mU --icons --git --time-style=long-iso --color=automatic --group-directories-first"
+alias ll="exa -l -h -@ -mU --icons --time-style=long-iso --color=automatic --group-directories-first"
 alias l="ll -aa"
 
 alias cp='cp -i'
