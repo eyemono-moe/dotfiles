@@ -3,6 +3,7 @@
 source "$(dirname "$0")/common.bash"
 
 /bin/bash "$CUR_DIR/installer/ghq.bash"
+/bin/bash "$CUR_DIR/installer/docker.bash"
 /bin/bash "$CUR_DIR/installer/neovim.bash"
 /bin/bash "$CUR_DIR/installer/poetry.bash"
 /bin/bash "$CUR_DIR/installer/pyenv.bash"
