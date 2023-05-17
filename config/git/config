@@ -1,5 +1,6 @@
 [core]
   ignoreCase = false
+  editor = "\\vim"
 
 [init]
   defaultBranch = main
@@ -15,3 +16,9 @@
 [include]
   path = conf.d/ghq.conf
   path = conf.d/local.conf
+
+[sequence]
+  editor = "\\vim"
+
+[commit]
+  template = ~/.config/git/.gittemplate.txt
