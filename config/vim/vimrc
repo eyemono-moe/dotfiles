@@ -44,6 +44,10 @@ set wildmode=longest:full,full
 " .viminfo
 set viminfo+=n~/.local/share/vim/viminfo
 
+" encoding
+set encoding=utf-8
+set fileencodings=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936
+
 " git commit prefix
 augroup gitabbr
   autocmd!
