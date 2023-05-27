@@ -25,11 +25,11 @@ return function()
   }
 
   dashboard.section.buttons.val = {
-    dashboard.button("e", "  New File    ", ":enew<CR>"),
-    dashboard.button("f", "  Find File   ", ":Telescope find_files<CR>"),
-    dashboard.button("t", "  Find Text   ", ":Telescope live_grep<CR>"),
+    dashboard.button("e", "󱪞  New File    ", ":enew<CR>"),
+    dashboard.button("f", "󰱼  Find File   ", ":Telescope find_files<CR>"),
+    dashboard.button("t", "󱎸  Find Text   ", ":Telescope live_grep<CR>"),
     dashboard.button("n", "  Open Neotree", ":Neotree show<CR>"),
-    dashboard.button("q", "  Quit        ", ":qa<CR>"),
+    dashboard.button("q", "󰗼  Quit        ", ":qa<CR>"),
   }
 
   alpha.setup(dashboard.opts)
