@@ -2,8 +2,7 @@ return {
   "cssls",
   "html",
   "marksman",
-  "pylsp",
-  "sumneko_lua",
+  "lua_ls",
   "tsserver",
 }
 
