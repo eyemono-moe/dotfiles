@@ -40,6 +40,7 @@ fadd() {
   selected=("$(
     git status --short |
     fzf-tmux -p 80% -m \
+    --prompt="GIT ADD > " \
     --preview "if [ ! -e {2} ];then
       echo {2} has been removed.
     elif [[ -d {2} ]];then
