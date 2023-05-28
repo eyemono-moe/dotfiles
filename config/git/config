@@ -22,3 +22,7 @@
 
 [commit]
   template = ~/.config/git/.gittemplate.txt
+
+[alias]
+  # https://zenn.dev/yamo/articles/5c90852c9c64ab
+	lg = log --graph --decorate --abbrev-commit --format=format:'%C(blue)%h%C(reset) - %C(green)(%ar)%C(reset)%C(yellow)%d%C(reset)\n  %C(white)%s%C(reset) %C(dim white)- %an%C(reset)'
