@@ -157,7 +157,7 @@ alias cat='bat --paging=never'
 alias batman='bat --language=man --plain'
 
 ### Go ###
-export GOPATH=$HOME
+export GOPATH=$HOME/go
 export PATH=$PATH:$HOME/go/bin
 export PATH=$PATH:$GOPATH/bin
 
