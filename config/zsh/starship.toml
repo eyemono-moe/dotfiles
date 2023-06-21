@@ -6,7 +6,7 @@
 
 format = """
 [](fg:1_bg)\
-$os\
+[󰯉 ](bg:1_bg fg:1_fg)\
 [](bg:2_bg fg:1_bg)\
 $directory\
 [](bg:3_bg fg:2_bg)\
@@ -42,10 +42,6 @@ palette = "eyemono"
 4_fg = '#191E1F'
 5_fg = '#191E1F'
 6_fg = '#191E1F'
-
-[os]
-style = "bg:1_bg fg:1_fg"
-disabled = false
 
 [directory]
 style = "bg:2_bg fg:2_fg"
@@ -100,12 +96,9 @@ format = '[ $symbol ($version) ]($style)'
 disabled = false
 time_format = "%R"                        # Hour:Minute Format
 style = "bg:5_bg fg:5_fg"
-format = '[ @$time ]($style)'
+format = '[  $time ]($style)'
 
 [cmd_duration]
 min_time = 500
 style = "bg:6_bg fg:6_fg"
 format = "[  $duration ]($style)"
-
-[os.symbols]
-Ubuntu = " "
