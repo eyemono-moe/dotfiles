@@ -9,3 +9,6 @@ export XDG_CACHE_HOME="$HOME/.cache"
 
 ### zsh ###
 export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
+
+### Deno ###
+export DENO_INSTALL="$XDG_DATA_HOME/deno"
