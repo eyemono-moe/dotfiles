@@ -18,7 +18,6 @@ apt install -y \
   git \
   hexyl \
   jq \
-  libqrencode3 \
   neofetch \
   ripgrep \
   shellcheck \
