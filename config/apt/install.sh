@@ -12,6 +12,7 @@ apt install -y \
   curl \
   exa \
   fd-find \
+  figlet \
   file \
   fzf \
   golang-go \
