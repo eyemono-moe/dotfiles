@@ -9,7 +9,7 @@
   helper = /mnt/c/Program\\ Files/Git/mingw64/bin/git-credential-manager.exe
 
 [user]
-  name = detteiu8383
+  name = "eyemono-moe"
   email = "" # set in conf.d/local.conf
   useConfigOnly = true
 
