@@ -3,5 +3,5 @@
 ## Installation
 
 ```bash
-curl -sL https://raw.githubusercontent.com/detteiu8383/dotfiles/main/install.sh | sh
+curl -sL https://raw.githubusercontent.com/eyemono-moe/dotfiles/main/install.sh | sh
 ```
