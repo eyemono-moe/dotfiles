@@ -69,6 +69,7 @@ zinit wait lucid null for \
     @'zdharma-continuum/null'
 
 ### docker (https://zenn.dev/taiga533/articles/11f1b21ef4a5ff) ###
+export DOCKER_CONFIG="$XDG_CONFIG_HOME"/docker
 service docker status > /dev/null 2>&1
 if [ $? = 1 ]; then
     sudo service docker start
