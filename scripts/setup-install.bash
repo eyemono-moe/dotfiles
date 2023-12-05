@@ -3,6 +3,7 @@
 source "$(dirname "$0")/common.bash"
 
 # TODO: 指定したディレクトリ以下のスクリプトを自動で実行するようにする
+/bin/bash "$CUR_DIR/installer/bun.bash"
 /bin/bash "$CUR_DIR/installer/ghq.bash"
 /bin/bash "$CUR_DIR/installer/deno.bash"
 /bin/bash "$CUR_DIR/installer/docker.bash"
