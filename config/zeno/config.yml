@@ -71,6 +71,13 @@ snippets:
       lbuffer: ^git\s
 
   # docker
-  - name: dok
-    keyword: dok
+  - name: docker
+    keyword: d
     snippet: docker
+
+  # docker-compose
+  - name: docker compose
+    keyword: c
+    snippet: compose
+    context:
+      lbuffer: ^docker\s
