@@ -14,6 +14,7 @@ path=(
     "$GOPATH/bin"(N-/)
     "$DENO_INSTALL/bin"(N-/)
     "$XDG_CONFIG_HOME/scripts/bin"(N-/)
+    "$XDG_DATA_HOME/npm/bin"(N-/)
     "$path[@]"
 )
 
