@@ -256,3 +256,8 @@ esac
 ### aqua ###
 # https://aquaproj.github.io/docs/install#2-set-the-environment-variable-path
 export PATH="${AQUA_ROOT_DIR:-${XDG_DATA_HOME:-$HOME/.local/share}/aquaproj-aqua}/bin:$PATH"
+
+### browser(vivaldi) ###
+# https://blog.1q77.com/2024/01/open-browser-in-wsl/
+ln -s /mnt/c/Users/eyemono/AppData/Local/Vivaldi/Application/vivaldi.exe "$HOME/.local/bin/vivaldi"
+export BROWSER=$HOME/.local/bin/vivaldi
