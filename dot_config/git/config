@@ -1,0 +1,42 @@
+[user]
+  name = "eyemono-moe"
+  email = "" # set in conf.d/local.conf [TODO] use 1password
+  useConfigOnly = true
+
+[core]
+  editor = "\\vim"
+  pager = delta
+  ignoreCase = false
+
+[init]
+  defaultBranch = main
+
+[include]
+  path = conf.d/ghq.conf
+  path = conf.d/tmpl.conf # 環境ごとに異なる設定はここに書く
+  path = conf.d/local.conf # ローカル環境ごとに異なる/privateな設定はここに書く
+
+[commit]
+  template = ~/.config/git/.gittemplate.txt
+
+[alias]
+  # https://zenn.dev/yamo/articles/5c90852c9c64ab
+	lg = log --graph --decorate --abbrev-commit --format=format:'%C(blue)%h%C(reset) - %C(green)(%ar)%C(reset)%C(yellow)%d%C(reset)\n  %C(white)%s%C(reset) %C(dim white)- %an%C(reset)'
+
+[pager]
+  diff = delta
+  log = delta
+  reflog = delta
+  show = delta
+
+[interactive]
+  diffFilter = delta --color-only
+
+[delta]
+  navigate = true
+  dark = true
+  line-numbers = true
+  side-by-side = true
+
+[merge]
+  conflictstyle = zdiff3
