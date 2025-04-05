@@ -1,0 +1,36 @@
+### locale ###
+export LANG="en_US.UTF-8"
+
+unsetopt GLOBAL_RCS
+
+### XDG ###
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_STATE_HOME="$HOME/.local/state"
+export XDG_CACHE_HOME="$HOME/.cache"
+
+### zsh ###
+export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
+
+### sheldon ###
+export SHELDON_CONFIG_DIR="$ZDOTDIR"
+
+### Go ###
+export GOPATH="$XDG_DATA_HOME/go"
+export GO111MODULE="on"
+
+### bun ###
+export BUN_INSTALL="$XDG_DATA_HOME/bun"
+
+### pnpm ###
+export PNPM_HOME="$XDG_DATA_HOME/pnpm"
+
+### npm ###
+export NPM_CONFIG_DIR="$XDG_CONFIG_HOME/npm"
+export NPM_DATA_DIR="$XDG_DATA_HOME/npm"
+export NPM_CACHE_DIR="$XDG_CACHE_HOME/npm"
+export NPM_CONFIG_USERCONFIG="$NPM_CONFIG_DIR/npmrc"
+
+### aqua ###
+# https://aquaproj.github.io/docs/install#2-set-the-environment-variable-path
+export AQUA_ROOT_DIR="$XDG_DATA_HOME/aquaproj-aqua"

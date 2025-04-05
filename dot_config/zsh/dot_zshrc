@@ -1,0 +1,97 @@
+### paths ###
+typeset -U path
+typeset -U fpath
+
+path=(
+    '/usr/local/bin'(N-/)
+    '/usr/bin'(N-/)
+    '/bin'(N-/)
+    '/usr/local/sbin'(N-/)
+    '/usr/sbin'(N-/)
+    '/sbin'(N-/)
+)
+
+path=(
+    "$HOME/.local/bin"(N-/)
+    "$GOPATH/bin"(N-/)
+    "$BUN_INSTALL/bin"(N-/)
+    "$PNPM_HOME"(N-/)
+    "$NPM_DATA_DIR/bin"(N-/)
+    "$CARGO_HOME/bin"(N-/)
+    "$AQUA_ROOT_DIR/bin"(N-/)
+    "$XDG_CONFIG_HOME/scripts/bin"(N-/)
+    "$path[@]"
+)
+
+fpath=(
+    "$XDG_DATA_HOME/zsh/completions"(N-/)
+    "$fpath[@]"
+)
+
+### history ###
+export HISTFILE="$XDG_STATE_HOME/zsh_history"
+export HISTSIZE=12000
+export SAVEHIST=10000
+
+setopt AUTO_PUSHD
+setopt PUSHD_IGNORE_DUPS
+setopt GLOBDOTS
+setopt APPEND_HISTORY
+setopt EXTENDED_HISTORY
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_IGNORE_SPACE
+setopt HIST_REDUCE_BLANKS
+setopt HIST_SAVE_NO_DUPS
+setopt INTERACTIVE_COMMENTS
+setopt NO_SHARE_HISTORY
+setopt MAGIC_EQUAL_SUBST
+setopt PRINT_EIGHT_BIT
+setopt NO_FLOW_CONTROL
+
+
+### Starship ###
+export STARSHIP_CONFIG="$ZDOTDIR/starship.toml"
+export STARSHIP_CACHE="$XDG_CACHE_HOME/starship"
+eval "$(starship init zsh)"
+
+
+### key bindings ###
+widget::history() {
+    local selected 
+    selected="$(history -inr 1 | fzf-tmux -p 80% --exit-0 --query "$LBUFFER" | cut -d' ' -f4- | sed 's/\\n/\n/g')"
+    if [ -n "$selected" ]; then
+        BUFFER="$selected"
+        CURSOR=$#BUFFER
+    fi
+    zle -R -c # refresh screen
+}
+
+zle -N widget::history
+bindkey "^R" widget::history
+
+### docker (https://zenn.dev/taiga533/articles/11f1b21ef4a5ff) ###
+export DOCKER_CONFIG="$XDG_CONFIG_HOME"/docker
+service docker status > /dev/null 2>&1
+if [ $? = 1 ]; then
+    sudo service docker start
+fi
+
+### sheldon ###
+sheldon::load() {
+    local profile="$1"
+    local plugins_file="$SHELDON_CONFIG_DIR/plugins.toml"
+    local cache_file="$XDG_CACHE_HOME/sheldon/$profile.zsh"
+    if [[ ! -f "$cache_file" || "$plugins_file" -nt "$cache_file" ]]; then
+        mkdir -p "$XDG_CACHE_HOME/sheldon"
+        sheldon --profile="$profile" source >"$cache_file"
+        zcompile "$cache_file"
+    fi
+    \builtin source "$cache_file"
+}
+
+sheldon::update() {
+    sheldon --profile="eager" lock --update
+    sheldon --profile="lazy" lock --update
+}
+
+sheldon::load eager
