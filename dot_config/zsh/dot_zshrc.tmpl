@@ -48,12 +48,21 @@ setopt MAGIC_EQUAL_SUBST
 setopt PRINT_EIGHT_BIT
 setopt NO_FLOW_CONTROL
 
+### homebrew ###
+{{ if eq .chezmoi.os "linux" }}
+BREW_PREFIX="/home/linuxbrew/.linuxbrew"
+{{ else if eq .chezmoi.os "darwin" }}
+BREW_PREFIX="/opt/homebrew"
+{{ end }}
+
+if [ -x "${BREW_PREFIX}/bin/brew" ]; then
+  eval "$(${BREW_PREFIX}/bin/brew shellenv)"
+fi
 
 ### Starship ###
 export STARSHIP_CONFIG="$ZDOTDIR/starship.toml"
 export STARSHIP_CACHE="$XDG_CACHE_HOME/starship"
 eval "$(starship init zsh)"
-
 
 ### key bindings ###
 widget::history() {

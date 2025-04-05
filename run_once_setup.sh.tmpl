@@ -1,0 +1,45 @@
+#!/bin/bash
+set -euxo pipefail
+
+{{ if eq .chezmoi.os "linux" }}
+sudo apt update
+sudo apt install -y \
+  build-essential \
+  ca-certificates \
+  curl \
+  git \
+  gnupg \
+  lsb-release \
+  zsh
+{{ end }}
+
+# Homebrew
+if ! command -v brew &>/dev/null; then
+  NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  {{ if eq .chezmoi.os "linux" }}
+  BREW_PREFIX="/home/linuxbrew/.linuxbrew"
+  {{ else if eq .chezmoi.os "darwin" }}
+  BREW_PREFIX="/opt/homebrew"
+  {{ end }}
+  eval "$(${BREW_PREFIX}/bin/brew shellenv)"
+fi
+
+# aqua を Homebrew でインストール
+if ! command -v aqua &>/dev/null; then
+  echo "[+] Installing aqua via brew..."
+  brew install aqua
+fi
+
+# aquaによるツールインストール
+if command -v aqua &>/dev/null; then
+  echo "[+] Installing tools via aqua..."
+  aqua i
+fi
+
+# zsh をデフォルトシェルに設定
+if command -v zsh &>/dev/null; then
+  echo "[+] Setting default shell to zsh..."
+  command -v chsh >/dev/null && chsh -s "$(command -v zsh)" || true
+fi
+
+echo "[✓] setup complete"
