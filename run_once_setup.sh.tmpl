@@ -36,6 +36,12 @@ if command -v aqua &>/dev/null; then
   aqua i
 fi
 
+# install tools with Homebrew bundle
+if command -v brew &>/dev/null; then
+  echo "[+] Installing tools via brew bundle..."
+  brew bundle --file="$XDG_CONFIG_HOME/homebrew/Brewfile" || true
+fi
+
 # set zsh as the default shell
 if command -v zsh &>/dev/null; then
   echo "[+] Setting default shell to zsh..."

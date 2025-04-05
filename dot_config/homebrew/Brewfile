@@ -1,0 +1,4 @@
+brew "nvm"
+brew "starship"
+brew "tmux"
+brew "postgresql@15"

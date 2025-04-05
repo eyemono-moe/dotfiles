@@ -1,0 +1,10 @@
+registries:
+  - type: standard
+    ref: v4.338.0 #renovate: depName aquaproj/aqua-registry
+packages:
+  - name: cli/ghq@v1.8.0
+  - name: go-task/task@v3.42.1
+  - name: suzuki-shunsuke/tfenv@v3.0.0
+  - name: denoland/deno@v2.2.8
+  - name: pnpm/pnpm@v10.7.1
+  - name: golang/go@go1.24.2
