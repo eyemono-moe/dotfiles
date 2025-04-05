@@ -6,7 +6,6 @@ export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_STATE_HOME="$HOME/.local/state"
 export XDG_CACHE_HOME="$HOME/.cache"
 export AQUA_ROOT_DIR="$XDG_DATA_HOME/aquaproj-aqua"
-export AQUA_GLOBAL_CONFIG="$XDG_CONFIG_HOME/aquaproj-aqua/aqua.yaml"
 
 # Ask for sudo password upfront
 if command -v sudo &>/dev/null; then
@@ -41,18 +40,6 @@ fi
 if ! command -v aqua &>/dev/null; then
   echo "[+] Installing aqua via brew..."
   brew install aqua
-fi
-
-# install tools with aqua
-if command -v aqua &>/dev/null; then
-  echo "[+] Installing tools via aqua..."
-  aqua i
-fi
-
-# install tools with Homebrew bundle
-if command -v brew &>/dev/null; then
-  echo "[+] Installing tools via brew bundle..."
-  brew bundle --file="$XDG_CONFIG_HOME/homebrew/Brewfile" || true
 fi
 
 # set zsh as the default shell
