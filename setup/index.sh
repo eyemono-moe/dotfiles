@@ -13,4 +13,4 @@ if ! command -v chezmoi &>/dev/null; then
 fi
 
 # Run chezmoi init
-~/bin/chezmoi init eyemono-moe --apply
+$HOME/.local/bin/chezmoi init eyemono-moe --apply
