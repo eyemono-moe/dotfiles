@@ -9,7 +9,7 @@ export XDG_CACHE_HOME="$HOME/.cache"
 # Install chezmoi
 if ! command -v chezmoi &>/dev/null; then
   echo "[+] Installing chezmoi..."
-  sh -c "$(curl -fsLS get.chezmoi.io)"
+  sh -c "$(curl -fsLS get.chezmoi.io)" -- -b $HOME/.local/bin
 fi
 
 # Run chezmoi init
