@@ -51,7 +51,7 @@ export ZENO_ENABLE_SOCK=1
 export ZENO_GIT_CAT="bat --color=always"
 export ZENO_GIT_TREE="eza --tree"
 
-zsh-defer -a -t0.01 "$ZENO_CONFIG_HOME/config.ts"
+# zsh-defer -a -t0.01 "$ZENO_CONFIG_HOME/config.ts"
 """
 hooks.post = """
 __zeno_bindkey() {
@@ -63,11 +63,11 @@ __zeno_bindkey() {
 }
 zsh-defer -a -t0.01 __zeno_bindkey
 
-__zeno_chpwd() {
-    "$ZENO_CONFIG_HOME/config.ts"
-    zeno-restart-server
-}
-add-zsh-hook chpwd __zeno_chpwd
+# __zeno_chpwd() {
+#     "$ZENO_CONFIG_HOME/config.ts"
+#     zeno-restart-server
+# }
+# add-zsh-hook chpwd __zeno_chpwd
 """
 profiles = ["lazy"]
 

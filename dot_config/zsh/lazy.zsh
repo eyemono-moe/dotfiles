@@ -98,13 +98,6 @@ zle -N widget::ghq::session
 # C-g で呼び出せるようにする
 bindkey "^g" widget::ghq::session
 
-### zsh plugins ###
-zinit wait lucid blockf light-mode for \
-  atload'async_init' @'mafredri/zsh-async' \
-  @'zsh-users/zsh-autosuggestions' \
-  @'zsh-users/zsh-completions' \
-  @'zdharma-continuum/fast-syntax-highlighting'
-
 ### Editor ###
 export EDITOR="vi"
 (( ${+commands[vim]} )) && EDITOR="vim"
@@ -142,23 +135,6 @@ zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 
 ### Tmux ###
 tmux source $XDG_CONFIG_HOME/tmux/tmux.conf
-
-### zeno ###
-export ZENO_HOME="$XDG_CONFIG_HOME/zeno"
-export ZENO_ENABLE_SOCK=1
-# export ZENO_DISABLE_BUILTIN_COMPLETION=1
-export ZENO_GIT_CAT="bat --color=always"
-export ZENO_GIT_TREE="exa --tree"
-
-__zeno_atload() {
-   bindkey ' '  zeno-auto-snippet
-   bindkey '^M' zeno-auto-snippet-and-accept-line
-   bindkey '^P' zeno-completion
-}
-
-zinit wait lucid light-mode for \
-    atload'__zeno_atload' \
-    @'yuki-yano/zeno.zsh'
 
 ### browser(vivaldi) ###
 # https://blog.1q77.com/2024/01/open-browser-in-wsl/
