@@ -19,5 +19,5 @@ if command -v aqua &>/dev/null; then
   echo -e "\033[1;34m[INFO]\033[0m    Installing tools with aqua..."
   # `aqua i` ignores global configuration by default. To install tools of global configuration by aqua i, set the -a option.
   # https://aquaproj.github.io/docs/tutorial/global-config/#aqua-i-ignores-global-configuration-by-default
-  aqua install -a
+  aqua install -a -l || true
 fi
