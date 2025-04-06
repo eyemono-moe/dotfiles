@@ -1,4 +1,4 @@
-app = "dot-redirector"
+app = "dot-eyemono-moe"
 
 [build]
 builder = "heroku/buildpacks:20"
