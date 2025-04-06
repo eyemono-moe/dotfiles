@@ -15,11 +15,19 @@ export XDG_STATE_HOME="$HOME/.local/state"
 export XDG_CACHE_HOME="$HOME/.cache"
 
 # Install chezmoi
-if ! command -v chezmoi &>/dev/null || [ ! -x "$HOME/.local/bin/chezmoi" ]; then
+if ! $HOME/.local/bin/chezmoi --version &>/dev/null; then
   echo -e "\033[1;34m[INFO]\033[0m    Installing chezmoi..."
   sh -c "$(curl -fsLS get.chezmoi.io)" -- -b $HOME/.local/bin
+
+  if ! $HOME/.local/bin/chezmoi --version &>/dev/null; then
+    echo -e "\033[1;31m[ERROR]\033[0m   Failed to install chezmoi. Please check your internet connection and try again."
+    exit 1
+  fi
+
   echo -e "\033[1;32m[SUCCESS]\033[0m chezmoi installed"
+else
+  echo -e "\033[1;32m[INFO]\033[0m    chezmoi already installed"
 fi
 
 # Run chezmoi init
-$HOME/.local/bin/chezmoi init eyemono-moe --apply
+$HOME/.local/bin/chezmoi init eyemono-moe --apply --verbose
