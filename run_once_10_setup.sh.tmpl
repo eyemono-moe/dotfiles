@@ -1,5 +1,11 @@
 #!/bin/bash
-set -euxo pipefail
+set -euo pipefail
+
+case "${DEBUG:-}" in
+  true|1|yes|on)
+    set -x
+    ;;
+esac
 
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"

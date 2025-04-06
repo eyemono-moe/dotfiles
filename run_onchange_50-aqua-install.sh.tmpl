@@ -1,5 +1,11 @@
 #!/bin/bash
-set -euxo pipefail
+set -euo pipefail
+
+case "${DEBUG:-}" in
+  true|1|yes|on)
+    set -x
+    ;;
+esac
 
 # aqua.yaml hash: {{ include "dot_config/aquaproj-aqua/aqua.yaml" | sha256sum }}
 
