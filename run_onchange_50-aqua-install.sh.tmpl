@@ -11,5 +11,7 @@ export PATH="$HOME/.local/bin:$PATH"
 
 if command -v aqua &>/dev/null; then
   echo "[+] Installing tools with aqua..."
-  aqua install
+  # `aqua i` ignores global configuration by default. To install tools of global configuration by aqua i, set the -a option.
+  # https://aquaproj.github.io/docs/tutorial/global-config/#aqua-i-ignores-global-configuration-by-default
+  aqua install -a
 fi

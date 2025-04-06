@@ -28,18 +28,6 @@ sudo apt install -y \
 # install Homebrew
 if ! command -v brew &>/dev/null; then
   NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-  {{ if eq .chezmoi.os "linux" }}
-  BREW_PREFIX="/home/linuxbrew/.linuxbrew"
-  {{ else if eq .chezmoi.os "darwin" }}
-  BREW_PREFIX="/opt/homebrew"
-  {{ end }}
-  eval "$(${BREW_PREFIX}/bin/brew shellenv)"
-fi
-
-# install aqua with Homebrew
-if ! command -v aqua &>/dev/null; then
-  echo "[+] Installing aqua via brew..."
-  brew install aqua
 fi
 
 # set zsh as the default shell
