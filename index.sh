@@ -30,4 +30,4 @@ else
 fi
 
 # Run chezmoi init
-$HOME/.local/bin/chezmoi init eyemono-moe --apply --verbose
+$HOME/.local/bin/chezmoi init eyemono-moe --apply
