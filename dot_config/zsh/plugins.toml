@@ -22,13 +22,10 @@ local = "~/.config/zsh"
 use = ["lazy.zsh"]
 profiles = ["eager"]
 
-[plugins.fast-syntax-highlighting]
-github = "zdharma-continuum/fast-syntax-highlighting"
-profiles = ["lazy"]
-
 ####################
 # lazy
 ####################
+
 [plugins.zsh-completions]
 github = "zsh-users/zsh-completions"
 dir = "src"
@@ -39,6 +36,9 @@ profiles = ["lazy"]
 github = "zsh-users/zsh-autosuggestions"
 profiles = ["lazy"]
 
+[plugins.fast-syntax-highlighting]
+github = "zdharma-continuum/fast-syntax-highlighting"
+profiles = ["lazy"]
 
 [plugins.zeno]
 github = "yuki-yano/zeno.zsh"
