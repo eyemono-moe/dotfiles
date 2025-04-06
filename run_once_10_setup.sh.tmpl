@@ -8,6 +8,7 @@ case "${DEBUG:-}" in
 esac
 
 {{ if eq .chezmoi.os "linux" }}
+echo -e "\033[1;34m[INFO]\033[0m    Installing dependencies..."
 sudo apt update
 sudo apt install -y \
   build-essential \
@@ -17,6 +18,7 @@ sudo apt install -y \
   gnupg \
   lsb-release \
   zsh
+echo -e "\033[1;32m[SUCCESS]\033[0m dependencies installed"
 {{ end }}
 
 # install Homebrew
