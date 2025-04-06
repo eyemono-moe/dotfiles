@@ -4,7 +4,7 @@ export LS_COLORS="di=01;34:ln=01;36:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40
 ### Aliases ###
 alias la='ls -A'
 
-alias ll="exa -l -h -@ -mU --icons --time-style=long-iso --color=automatic --group-directories-first"
+alias ll="eza -l -h -@ -mU --icons --time-style=long-iso --color=automatic --group-directories-first"
 alias l="ll -aa"
 
 alias cp='cp -i'
