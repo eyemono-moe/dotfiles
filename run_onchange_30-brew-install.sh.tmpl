@@ -10,6 +10,8 @@ esac
 # run this script when Brewfile is changed
 # Brewfile hash: {{ include "dot_config/homebrew/Brewfile" | sha256sum }}
 
+export XDG_CONFIG_HOME="${HOME}/.config"
+
 {{ if eq .chezmoi.os "linux" }}
 BREW_PREFIX="/home/linuxbrew/.linuxbrew"
 {{ else if eq .chezmoi.os "darwin" }}
