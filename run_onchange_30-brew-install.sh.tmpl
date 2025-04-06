@@ -21,4 +21,5 @@ eval "$(${BREW_PREFIX}/bin/brew shellenv)"
 echo "[+] Installing tools with brew bundle..."
 brew bundle --file="$XDG_CONFIG_HOME/homebrew/Brewfile" || true
 echo "[+] Cleaning up unmanaged brew packages..."
-brew bundle cleanup --file="$XDG_CONFIG_HOME/homebrew/Brewfile"
+brew bundle cleanup --file="$XDG_CONFIG_HOME/homebrew/Brewfile" --force || true
+echo "[✓] brew bundle complete"
