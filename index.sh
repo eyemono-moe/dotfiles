@@ -13,7 +13,7 @@ export XDG_STATE_HOME="$HOME/.local/state"
 export XDG_CACHE_HOME="$HOME/.cache"
 
 # Install chezmoi
-if ! command -v chezmoi &>/dev/null; then
+if ! command -v chezmoi &>/dev/null || [ ! -x "$HOME/.local/bin/chezmoi" ]; then
   echo -e "\033[1;34m[INFO]\033[0m    Installing chezmoi..."
   sh -c "$(curl -fsLS get.chezmoi.io)" -- -b $HOME/.local/bin
 fi
