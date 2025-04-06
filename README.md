@@ -3,7 +3,7 @@
 Easily bootstrap your dev environment with:
 
 ```bash
-curl -sL https://dot.eyemono.moe | bash
+curl -sL dot.eyemono.moe | bash
 ```
 
 ---
