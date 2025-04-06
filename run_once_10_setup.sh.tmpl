@@ -14,10 +14,8 @@ export XDG_CACHE_HOME="$HOME/.cache"
 export AQUA_ROOT_DIR="$XDG_DATA_HOME/aquaproj-aqua"
 
 # Ask for sudo password upfront
-if command -v sudo &>/dev/null; then
-  echo "[+] Requesting sudo password..."
-  sudo -v
-fi
+echo -e "\033[1;34m[INFO]\033[0m    Please enter your password"
+sudo -v
 
 {{ if eq .chezmoi.os "linux" }}
 sudo apt update
@@ -33,13 +31,15 @@ sudo apt install -y \
 
 # install Homebrew
 if ! command -v brew &>/dev/null; then
+  echo -e "\033[1;34m[INFO]\033[0m    Installing Homebrew..."
   NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  echo -e "\033[1;32m[SUCCESS]\033[0m Homebrew installed"
 fi
 
 # set zsh as the default shell
 if command -v zsh &>/dev/null; then
-  echo "[+] Setting default shell to zsh..."
+  echo -e "\033[1;34m[INFO]\033[0m    Setting default shell to zsh..."
   command -v chsh >/dev/null && chsh -s "$(command -v zsh)" || true
 fi
 
-echo "[✓] setup complete"
+echo -e "\033[1;32m[SUCCESS]\033[0m setup complete"
