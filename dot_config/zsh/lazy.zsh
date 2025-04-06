@@ -120,9 +120,6 @@ if (( ${+commands[bat]} )); then
   alias cat='bat --paging=never'
 fi
 
-### bun ###
-[ -s "$BUN_INSTALL/_bun" ] && source "$BUN_INSTALL/_bun"
-
 ### Node.js ###
 export NODE_REPL_HISTORY="$XDG_STATE_HOME/node_history"
 
