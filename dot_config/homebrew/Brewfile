@@ -1,5 +1,4 @@
 brew "aqua"
-brew "oven-sh/bun/bun"
 brew "postgresql@15"
 brew "starship"
 brew "tmux"
