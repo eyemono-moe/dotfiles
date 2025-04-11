@@ -1,0 +1,3 @@
+{{ $email := promptStringOnce . "email" "What is your \033[1;34memail address\033[0m" -}}
+[data]
+    email = {{ $email | quote }}

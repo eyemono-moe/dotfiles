@@ -1,6 +1,6 @@
 [user]
   name = "eyemono-moe"
-  email = "" # set in conf.d/local.conf [TODO] use 1password
+  email = {{ .email | quote }}
   useConfigOnly = true
 
 [core]
