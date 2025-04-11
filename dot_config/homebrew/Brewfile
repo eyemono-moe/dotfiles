@@ -1,4 +1,0 @@
-brew "aqua"
-brew "postgresql@15"
-brew "starship"
-brew "tmux"

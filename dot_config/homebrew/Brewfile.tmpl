@@ -1,0 +1,9 @@
+brew "aqua"
+brew "eza"
+brew "postgresql@15"
+brew "starship"
+brew "tmux"
+
+{{ if eq .chezmoi.os "darwin" }}
+cask "font-maple-mono-nf-cn"
+{{ end }}
