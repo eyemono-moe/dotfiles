@@ -8,7 +8,7 @@ case "${DEBUG:-}" in
 esac
 
 # run this script when Brewfile is changed
-# Brewfile hash: {{ include "dot_config/homebrew/Brewfile" | sha256sum }}
+# Brewfile hash: {{ include "dot_config/homebrew/Brewfile.tmpl" | sha256sum }}
 
 export XDG_CONFIG_HOME="${HOME}/.config"
 
