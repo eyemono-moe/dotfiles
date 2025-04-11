@@ -120,6 +120,11 @@ if (( ${+commands[bat]} )); then
   alias cat='bat --paging=never'
 fi
 
+### fnm ###
+if (( ${+commands[fnm]} )); then
+  eval "$(fnm env --use-on-cd)"
+fi
+
 ### Node.js ###
 export NODE_REPL_HISTORY="$XDG_STATE_HOME/node_history"
 
