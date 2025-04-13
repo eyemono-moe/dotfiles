@@ -19,6 +19,10 @@ export SHELDON_CONFIG_DIR="$ZDOTDIR"
 export GOPATH="$XDG_DATA_HOME/go"
 export GO111MODULE="on"
 
+### Deno ###
+export DENO_INSTALL="$XDG_DATA_HOME/deno"
+export DENO_INSTALL_ROOT="$DENO_INSTALL"
+
 ### bun ###
 export BUN_INSTALL="$XDG_DATA_HOME/bun"
 
