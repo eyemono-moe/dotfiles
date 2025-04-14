@@ -59,6 +59,9 @@ if [ -x "${BREW_PREFIX}/bin/brew" ]; then
   eval "$(${BREW_PREFIX}/bin/brew shellenv)"
 fi
 
+# PostgreSQL [FIXME] いい感じの場所に定義し直す
+export PATH="$BREW_PREFIX/opt/postgresql@15/bin:$PATH"
+
 ### Starship ###
 export STARSHIP_CONFIG="$ZDOTDIR/starship.toml"
 export STARSHIP_CACHE="$XDG_CACHE_HOME/starship"
