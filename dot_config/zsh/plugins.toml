@@ -45,7 +45,6 @@ github = "yuki-yano/zeno.zsh"
 hooks.pre = """
 export ZENO_HOME="$(mktemp -d -t zeno.XXXXXX)"
 export ZENO_CONFIG_HOME="$XDG_CONFIG_HOME/zeno"
-export ZENO_SCRIPT_DIR="$ZENO_CONFIG_HOME/scripts"
 export ZENO_ENABLE_SOCK=1
 # export ZENO_DISABLE_BUILTIN_COMPLETION=1
 export ZENO_GIT_CAT="bat --color=always"
@@ -56,10 +55,9 @@ export ZENO_GIT_TREE="eza --tree"
 hooks.post = """
 __zeno_bindkey() {
     bindkey ' '  zeno-auto-snippet
-    bindkey '^M' zeno-auto-snippet-and-accept-line
-    bindkey '^P' zeno-completion
+    bindkey '^m' zeno-auto-snippet-and-accept-line
+    bindkey '^i' zeno-completion
     bindkey '^X '  zeno-insert-space
-    bindkey '^X^M' accept-line
 }
 zsh-defer -a -t0.01 __zeno_bindkey
 
