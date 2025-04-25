@@ -33,6 +33,7 @@ function select-git-switch() {
 zle -N select-git-switch
 bindkey "^g^s" select-git-switch # 「control + G + S」で実行
 
+{{ if eq .chezmoi.os "linux" }}
 # https://zenn.dev/kaityo256/articles/open_command_on_wsl
 function open() {
     if [ $# != 1 ]; then
@@ -45,6 +46,7 @@ function open() {
         fi
     fi
 }
+{{ end }}
 
 # https://www.m3tech.blog/entry/dotfiles-bonsai#Tmux編
 # Gitリポジトリを列挙する
