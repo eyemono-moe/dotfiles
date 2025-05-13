@@ -53,6 +53,8 @@ export ZENO_GIT_TREE="eza --tree"
 hooks.post = """
 __zeno_bindkey() {
     bindkey ' '  zeno-auto-snippet
+    bindkey '^M' zeno-auto-snippet-and-accept-line
+    bindkey '^P' zeno-completion
 }
 zsh-defer -a -t0.01 __zeno_bindkey
 """
