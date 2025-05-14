@@ -81,3 +81,8 @@ snippets:
     snippet: compose
     context:
       lbuffer: ^docker\s
+
+  # cursor
+  - name: cursor
+    keyword: cu
+    snippet: cursor
